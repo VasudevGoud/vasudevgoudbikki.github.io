@@ -1,3 +1,4 @@
+
 :root {
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
@@ -612,7 +613,7 @@ video {
   outline: none;
 }
 
-/* Ensure modal content is properly centered */
+
 .modal-content {
   display: flex;
   flex-direction: column;

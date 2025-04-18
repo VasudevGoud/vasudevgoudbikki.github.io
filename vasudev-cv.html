@@ -14,6 +14,8 @@
       --dark: #1f2937;
       --light: #f4f4f4;
       --gray: #6b7280;
+      --text-gray: #6b7280;
+      --heading-dark: #1f2937;
     }
     
     body {
@@ -21,7 +23,7 @@
       margin: 0;
       padding: 0;
       background-color: white;
-      color: #333;
+      color: var(--heading-dark);
       line-height: 1.6;
       max-width: 1000px;
       margin: 0 auto;
@@ -36,12 +38,12 @@
     }
     
     .cv-header h1 {
-      color: var(--dark);
+      color: var(--heading-dark);
       margin-bottom: 0.5rem;
     }
     
     .cv-header p {
-      color: var(--gray);
+      color: var(--text-gray);
       margin-top: 0;
     }
     
@@ -68,17 +70,19 @@
     
     .item h3 {
       margin: 0;
-      color: var(--dark);
+      color: var(--heading-dark);
     }
     
     .item .date {
-      color: var(--gray);
+      color: var(--text-gray);
       font-weight: 400;
     }
     
-    .item p {
+    .item p,
+    .course p,
+    .section p {
       margin: 0.5rem 0;
-      color: var(--gray);
+      color: var(--text-gray);
     }
     
     .skills {
@@ -88,11 +92,13 @@
     }
     
     .skill {
-      background-color: var(--light);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
+    background-color: var(--light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-gray); /* Changed from --heading-dark to --text-gray */
+    border: 1px solid #e5e7eb; /* Added subtle border for better definition */
+  }
     
     ul {
       padding-left: 1.2rem;
@@ -100,6 +106,7 @@
     
     li {
       margin-bottom: 0.5rem;
+      color: var(--text-gray);
     }
     
     @media print {
@@ -153,25 +160,56 @@
 
   <div class="section">
     <h2>Courses</h2>
-    <ul>
-      <li>Computer Security & Incident Response : Studied risk analysis methodologies (NIST SP 800-30, ISO 27001), Gained expertise in SIEM, IDS, and incident handling strategies for threat detection and system recovery</li>
-      <li>User Experience in Engineering : Developed UX prototypes for next-gen interfaces using biometric data and systematic design methods.</li>
-      <li>Computer Programming : Gained proficiency in Python, object-oriented programming, and libraries like NumPy for data analysis.</li>
-      <li>Introduction to Artificial Intelligence : Covers fundamental AI concepts, including search and adversarial algorithms, logic-based inference techniques, belief revision, and ethical, legal, and societal considerations</li>
-      <li>Algorithms and Data structures : Strong understanding of algorithm design, complexity analysis, and data structure optimization</li>
-      <li>Logical Theory & Problem-Solving : Developed analytical skills in game theory, Nash equilibrium, and logic-based reasoning.</li>
-      <li>Ethical Hacking : Gained hands-on experience with penetration testing and Cyber Kill Chain techniques and Explored security protocols (TLS, Kerberos), threat detection, IoT, and web security.</li>
-      <li>Network Security : gained fundamental knowledge on cybersecurity by Studied cryptography, intrusion detection, malware analysis, and security models.</li>
-      <li>Data Security : Used an open-source model checker for handshake verification.</li>
-      <li>Research Topics in Cyber security: Conducted a systematic review on blockchain applications in cyber-physical systems, analyzing security, transparency, and efficiency.</li>
-    </ul>
-    
-      
-   
+    <div class="courses-list">
+        <div class="course">
+            <h3>Computer Security & Incident Response</h3>
+            <p>Studied risk analysis methodologies (NIST SP 800-30, ISO 27001), Gained expertise in SIEM, IDS, and incident handling strategies for threat detection and system recovery.</p>
+        </div>
+        <div class="course">
+            <h3>User Experience in Engineering</h3>
+            <p>Developed UX prototypes for next-gen interfaces using biometric data and systematic design methods.</p>
+        </div>
+        <div class="course">
+            <h3>Computer Programming</h3>
+            <p>Gained proficiency in Python, object-oriented programming, and libraries like NumPy for data analysis.</p>
+        </div>
+        <div class="course">
+            <h3>Introduction to Artificial Intelligence</h3>
+            <p>Covers fundamental AI concepts, including search and adversarial algorithms, logic-based inference techniques, belief revision, and ethical, legal, and societal considerations.</p>
+        </div>
+        <div class="course">
+            <h3>Algorithms and Data structures</h3>
+            <p>Strong understanding of algorithm design, complexity analysis, and data structure optimization.</p>
+        </div>
+        <div class="course">
+            <h3>Logical Theory for Uncertainty and learning</h3>
+            <p>Developed analytical skills in game theory, Nash equilibrium, and logic-based reasoning.</p>
+        </div>
+        <div class="course">
+            <h3>Ethical Hacking</h3>
+            <p>Gained hands-on experience with penetration testing and Cyber Kill Chain techniques and Explored security protocols (TLS, Kerberos), threat detection, IoT, and web security.</p>
+        </div>
+        <div class="course">
+            <h3>Network Security</h3>
+            <p>Gained fundamental knowledge on cybersecurity by Studied cryptography, intrusion detection, malware analysis, and security models.</p>
+        </div>
+        <div class="course">
+            <h3>Data Security</h3>
+            <p>Used an open-source model checker for handshake verification.</p>
+        </div>
+        <div class="course">
+            <h3>Research Topics in Cyber security</h3>
+            <p>Conducted a systematic review on blockchain applications in cyber-physical systems, analyzing security, transparency, and efficiency.</p>
+        </div>
+    </div>
 </div>
 
   <div class="section">
     <h2>Projects</h2>
+    <div class="item">
+      <h3>Reverse Engineering</h3>
+      <p>I’ve reverse-engineered Android apps to uncover vulnerabilities like insecure data storage and exposed APIs, providing actionable fixes. Additionally, I conducted OWASP Top 10 assessments—identifying risks like SQLi and XSS—and implemented mitigations such as input validation and secure authentication.      </p>
+    </div>
     <div class="item">
       <h3>Cyber Ship Security Report</h3>
       <p>Conducted a detailed cybersecurity risk analysis for maritime systems using the NIST framework. Evaluated threats, vulnerabilities, and mitigation strategies for critical infrastructure.</p>
