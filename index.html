@@ -58,12 +58,12 @@
         <h3>Dance Choreography <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i></a></h3>
         <p>Choreographing dance routines combines my creativity with teamwork. Here are some highlights:</p>
         <div class="media-grid">
-          <div class="media-thumbnail" onclick="openMediaModal('dance_video.1.mp4', 'video')">
-            <img src="dance_vedio_1.MP4" alt="Dance performance">
+          <div class="media-thumbnail" onclick="openMediaModal('videos/dance1.mp4', 'video')">
+            <img src="images/dance-thumbnail1.jpg" alt="Dance performance thumbnail">
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
-          <div class="media-thumbnail" onclick="openMediaModal('dance_video.2.mp4', 'video')">
-            <img src="dance_vedio_2.MP4" alt="Dance rehearsal">
+          <div class="media-thumbnail" onclick="openMediaModal('videos/dance2.mp4', 'video')">
+            <img src="images/dance-thumbnail2.jpg" alt="Dance rehearsal thumbnail">
             <div class="play-icon"><i class="fas fa-play"></i></div>
           </div>
         </div>
@@ -114,15 +114,45 @@
       const modal = document.getElementById('mediaModal');
       const container = document.getElementById('mediaContainer');
       
+      // Clear previous content
+      container.innerHTML = '';
+      
       if (type === 'video') {
-        container.innerHTML = `
-          <video controls autoplay>
-            <source src="${src}" type="video/mp4">
-            Your browser doesn't support HTML5 video.
-          </video>
-        `;
+        const video = document.createElement('video');
+        video.controls = true;
+        video.autoplay = true;
+        video.style.width = '100%';
+        video.style.maxHeight = '70vh';
+        
+        const source = document.createElement('source');
+        source.src = src;
+        source.type = 'video/mp4';
+        
+        video.appendChild(source);
+        container.appendChild(video);
+        
+        // Error handling
+        video.onerror = function() {
+          container.innerHTML = `
+            <div class="error-message">
+              <p>Could not load the video. Please try again later.</p>
+              <p>Make sure:</p>
+              <ul>
+                <li>The video file exists at: ${src}</li>
+                <li>The file is in MP4 format</li>
+                <li>The file permissions are correct</li>
+              </ul>
+            </div>
+          `;
+        };
       } else {
-        container.innerHTML = `<img src="${src}" alt="Activity photo">`;
+        // For images
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Activity photo';
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '70vh';
+        container.appendChild(img);
       }
       
       modal.style.display = "block";
