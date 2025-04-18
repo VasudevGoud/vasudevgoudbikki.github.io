@@ -3,156 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vasudev Goud Bikki | Cybersecurity Student</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #1e293b;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin: 0.5rem 0;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-      font-size: 1.6rem;
-      color: #1e293b;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #e2e8f0;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #0f172a;
-    }
-
-    @media(max-width: 600px) {
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Vasudev Goud Bikki | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>Vasudev Goud Bikki</h1>
-    <p>Student Assistant | Cybersecurity Enthusiast</p>
-    <p>📍 Søborg, Denmark | 📧 vasudev0951@gmail.com | 🔗 <a href="https://www.linkedin.com/in/vasudev-goud-bikki-146488227" style="color:white;">LinkedIn</a> | 💻 <a href="https://github.com/VasudevGoud" style="color:white;">GitHub</a></p>
+    <p>M.Sc. in Computer Science & Engineering - Cybersecurity</p>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I am a Master’s student in Computer Science and Engineering at the Technical University of Denmark, specializing in Cybersecurity. My expertise includes cyber risk management, security automation, and vulnerability assessment. I have hands-on experience with ethical hacking, incident response, and security frameworks such as NIST and ISO27001. I’m passionate about applying cybersecurity knowledge in real-world scenarios to mitigate risk and strengthen digital resilience.</p>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <p><strong>Technical University of Denmark (DTU)</strong><br/>MSc in Computer Science and Engineering - Cybersecurity (2024 – Present)</p>
-        <ul>
-          <li>Network Security</li>
-          <li>Data Security </li> 
-          <li>Ethical Hacking </li>
-          <li>Cybersecurity Incident Response</li>
-          <li>Computer Programming , UX Engineering</li>
-          <li>Research topics in Cyber security</li>
-          <li>Algorithms and Data Structures </li>
-          <li>Introduction to Artificial Intelligence </li>
+  <div class="container">
+    <img src="001.jpg" alt="Vasudev Goud Bikki" class="profile-pic" />
+    <div class="intro">
+      <h2>Hey there! 👋</h2>
+      <p>
+        I'm Vasudev, a cybersecurity enthusiast by day and fitness warrior by night! Currently pursuing my Master's at DTU, I live at the intersection of code and cardio - whether I'm hacking systems (ethically, of course!) or pushing my limits in the gym and boxing ring.
+      </p>
+      <p>
+        When I'm not analyzing security frameworks or writing Python scripts, you'll find me:
+        <ul class="hobbies-list">
+          <li>🏋️‍♂️ Lifting weights as a certified gym freak</li>
+          <li>🥊 Throwing punches in the boxing ring</li>
+          <li>💃 Choreographing dance routines</li>
+          <li>🏐 Leading volleyball teams as captain</li>
         </ul>
-      </section>
+      </p>
+      <p>
+        This website is my digital playground - where NIST frameworks meet knockout punches, where vulnerability assessments coexist with volleyball strategies. I believe cybersecurity isn't just about technical skills; it's about the discipline from boxing, the teamwork from sports, and the creativity from dance.
+      </p>
+      <p>
+        So welcome to my world! Whether you're here to discuss zero-day exploits, compare workout routines, or just get to know the person behind the code, I'm glad you stopped by. The formal CV stuff is available if you need it, but I'd rather show you how all these pieces fit together to make me who I am.
+      </p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="vasudev-cv.html" target="_blank">My CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <button type="button" class="collapsible">Show Extracurricular Activities</button>
+  <div class="content" id="extracurricular">
+    <div class="content-inner">
+      <div class="activity-item">
+        <h3>Gym & Boxing <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i></a></h3>
+        <p>Fitness is my passion - from heavy lifting to boxing training. Check out my Instagram for workout updates!</p>
+      </div>
       
-
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Cyber Risk Analysis (Maritime Systems):</strong> Applied NIST framework for threat evaluation and mitigation strategies.</li>
-        <li><strong>Penetration Testing Simulation:</strong> Used tools like Metasploit, Nmap, Burp Suite to simulate real-world attacks.</li>
-        <li><strong>AI Kalaha Game:</strong> Built the classic Kalaha board game using Python with a minimax algorithm and alpha-beta pruning for intelligent move selection.</li>
-        <li><strong>Python Security Scripts:</strong> Developed tools for port scanning, DNS lookup, and firewall configuration.</li>
-        <li><strong>Portfolio Website:</strong> Created using HTML & CSS for presenting skills professionally.</li>
-        <li><strong>Web Exploits:</strong> Practiced SQL Injection and XSS in sandbox environments.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-      <p><strong>Student Assistant (Netto)</strong> | July 2024 – Feb 2025</p>
-      <ul>
-        <li>Managed evening operations, delegated tasks, and ensured store security.</li>
-        <li>Provided customer service and resolved issues efficiently.</li>
-        <li>Maintained cleanliness and operational efficiency.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Skills & Certifications</h2>
-      <div class="info-grid">
-        <div>
-          <p><span class="highlight">Languages:</span> Python, Java (basic), SQL, HTML, CSS</p>
-          <p><span class="highlight">Cybersecurity:</span> Pen Testing, SQLi, XSS, ARP Spoofing, Port Scanning</p>
-          <p><span class="highlight">Tools:</span> Nmap, Burp Suite, Wireshark, Iptables</p>
-        </div>
-        <div>
-          <p><span class="highlight">Certifications:</span> AWS Cloud Practitioner</p>
-          <p><span class="highlight">Frameworks:</span> NIST, ISO 27001, CORAS</p>
-          <p><span class="highlight">Languages Spoken:</span> English, Danish (beginner)</p>
+      <div class="activity-item">
+        <h3>Dance Choreography <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i></a></h3>
+        <p>Choreographing dance routines combines my creativity with teamwork. Here are some highlights:</p>
+        <div class="media-grid">
+          <div class="media-thumbnail" onclick="openMediaModal('dance_video.1.mp4', 'video')">
+            <img src="dance_vedio_1.MP4" alt="Dance performance">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-thumbnail" onclick="openMediaModal('dance_video.2.mp4', 'video')">
+            <img src="dance_vedio_2.MP4" alt="Dance rehearsal">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
         </div>
       </div>
-    </section>
+      
+      <div class="activity-item">
+        <h3>Volleyball Captain</h3>
+        <p>Leading the team has taught me quick decision-making and motivation strategies.</p>
+      </div>
+    </div>
+  </div>
 
-    <section>
-      <h2>Extracurricular</h2>
-      <ul>
-        <li><strong>Dance Choreography:</strong> Team leadership, creative coordination, adaptability.</li>
-        <li><strong>Volleyball Captain:</strong> Decision-making, teamwork, focus under pressure.</li>
-      </ul>
-    </section>
-  </main>
+  <!-- Media Modal -->
+  <div id="mediaModal" class="modal">
+    <span class="close" onclick="closeMediaModal()">&times;</span>
+    <div class="modal-content">
+      <div id="mediaContainer"></div>
+      <a id="instaLink" href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-modal-link">
+        <i class="fab fa-instagram"></i> See more on Instagram
+      </a>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2025 Vasudev Goud Bikki</p>
+  <footer id="contact">
+    <p>&copy; 2025 Vasudev Goud Bikki | Cybersecurity Professional</p>
+    <p>Contact: vasudev0951@gmail.com | Phone: +45 31527142 | LinkedIn: linkedin.com/in/vasudev-goud-bikki-146488227</p>
   </footer>
+
+  <script>
+    // Collapsible section script
+    document.addEventListener('DOMContentLoaded', function() {
+      const coll = document.querySelector('.collapsible');
+      coll.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = document.querySelector('.content');
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          this.textContent = 'Show Extracurricular Activities';
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          this.textContent = 'Hide Extracurricular Activities';
+        }
+      });
+    });
+    
+    // Media Modal functionality
+    function openMediaModal(src, type) {
+      const modal = document.getElementById('mediaModal');
+      const container = document.getElementById('mediaContainer');
+      
+      if (type === 'video') {
+        container.innerHTML = `
+          <video controls autoplay>
+            <source src="${src}" type="video/mp4">
+            Your browser doesn't support HTML5 video.
+          </video>
+        `;
+      } else {
+        container.innerHTML = `<img src="${src}" alt="Activity photo">`;
+      }
+      
+      modal.style.display = "block";
+    }
+
+    function closeMediaModal() {
+      document.getElementById('mediaModal').style.display = "none";
+      document.getElementById('mediaContainer').innerHTML = '';
+    }
+
+    // Close when clicking outside modal content
+    window.onclick = function(event) {
+      const modal = document.getElementById('mediaModal');
+      if (event.target == modal) {
+        closeMediaModal();
+      }
+    }
+  </script>
 </body>
 </html>
