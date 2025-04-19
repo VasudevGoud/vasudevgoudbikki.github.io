@@ -9,35 +9,85 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    
+    .profile-pic {
+      width: 300px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .intro {
+      flex: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .profile-pic {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      margin-right: 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .social-links a:hover {
+      color: #0077b5; /* LinkedIn blue */
+    }
+    
+    .social-links a.github:hover {
+      color: #6e5494; /* GitHub purple */
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Vasudev Goud Bikki</h1>
-    <p>M.Sc. in Computer Science & Engineering - Cybersecurity</p>
+    <p>Cybersecurity Enthusiast | Penetration Tester | DTU Master's Student</p>
   </header>
 
   <div class="container">
     <img src="001.jpg" alt="Vasudev Goud Bikki" class="profile-pic" />
     <div class="intro">
-      <h2>Hey there! 👋</h2>
+      <h2>About</h2>
       <p>
-        I'm Vasudev, a cybersecurity enthusiast by day and fitness warrior by night! Currently pursuing my Master's at DTU, I live at the intersection of code and cardio - whether I'm hacking systems (ethically, of course!) or pushing my limits in the gym and boxing ring.
+        Vasudev Goud Bikki is a cybersecurity specialist currently pursuing his Master's degree at DTU. He embodies a rare combination of technical brilliance and physical discipline - by day he's analyzing security frameworks and writing Python scripts, by night he's pushing his limits in the gym and boxing ring.
       </p>
       <p>
-        When I'm not analyzing security frameworks or writing Python scripts, you'll find me:
+        Vasudev's multifaceted personality shines through his diverse interests:
         <ul class="hobbies-list">
-          <li>🏋️‍♂️ Lifting weights as a certified gym freak</li>
-          <li>🥊 Throwing punches in the boxing ring</li>
-          <li>💃 Choreographing dance routines</li>
-          <li>🏐 Leading volleyball teams as captain</li>
+          <li>🏋️‍♂️ A certified fitness enthusiast with a passion for weight training</li>
+          <li>🥊 An accomplished boxer who approaches cybersecurity with a fighter's discipline</li>
+          <li>💃 A creative choreographer who brings rhythm to his technical work</li>
+          <li>🏐 A natural leader as demonstrated by his volleyball team captaincy</li>
         </ul>
       </p>
       <p>
-        This website is my digital playground - where NIST frameworks meet knockout punches, where vulnerability assessments coexist with volleyball strategies. I believe cybersecurity isn't just about technical skills; it's about the discipline from boxing, the teamwork from sports, and the creativity from dance.
+        His unique perspective comes from seeing cybersecurity through the lens of his varied experiences. The strategic thinking from boxing, the teamwork from sports, and the creativity from dance all inform his approach to security challenges. Vasudev believes true cybersecurity expertise requires more than just technical skills - it demands the same dedication, adaptability, and resilience he's developed through his physical pursuits.
       </p>
-      <p>
-        So welcome to my world! Whether you're here to discuss zero-day exploits, compare workout routines, or just get to know the person behind the code, I'm glad you stopped by. The formal CV stuff is available if you need it, but I'd rather show you how all these pieces fit together to make me who I am.
-      </p>
+      
+      
     </div>
   </div>
 
@@ -46,17 +96,42 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Rest of your HTML remains the same -->
   <button type="button" class="collapsible">Show Extracurricular Activities</button>
   <div class="content" id="extracurricular">
     <div class="content-inner">
       <div class="activity-item">
         <h3>Gym & Boxing <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i></a></h3>
-        <p>Fitness is my passion - from heavy lifting to boxing training. Check out my Instagram for workout updates!</p>
+        <p>Fitness is his passion - from heavy lifting to boxing training. Check out his Instagram for workout updates!</p>
+        
+        <div class="media-grid">
+          <!-- Gym Photos with thumbnails -->
+          <div class="media-thumbnail" onclick="openMediaModal('images/gym1.jpg', 'image')">
+            <img src="images/gym1-thumb.jpg" alt="Weight training session">
+          </div>
+          <div class="media-thumbnail" onclick="openMediaModal('images/gym2.jpg', 'image')">
+            <img src="images/gym2-thumb.jpg" alt="Boxing gloves">
+          </div>
+          <div class="media-thumbnail" onclick="openMediaModal('images/gym3.jpg', 'image')">
+            <img src="images/gym3-thumb.jpg" alt="Gym progress">
+          </div>
+          
+          <!-- Gym Videos with thumbnails -->
+          <div class="media-thumbnail" onclick="openMediaModal('videos/boxing.mp4', 'video')">
+            <img src="images/boxing-thumb.jpg" alt="Boxing training video">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-thumbnail" onclick="openMediaModal('videos/workout.mp4', 'video')">
+            <img src="images/workout-thumb.jpg" alt="Workout routine video">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+          </div>
+        </div>
+        </div>
       </div>
       
       <div class="activity-item">
         <h3>Dance Choreography <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i></a></h3>
-        <p>Choreographing dance routines combines my creativity with teamwork. Here are some highlights:</p>
+        <p>Choreographing dance routines combines his creativity with teamwork. Here are some highlights:</p>
         <div class="media-grid">
           <div class="media-thumbnail" onclick="openMediaModal('videos/dance1.mp4', 'video')">
             <img src="images/dance-thumbnail1.jpg" alt="Dance performance thumbnail">
@@ -71,7 +146,7 @@
       
       <div class="activity-item">
         <h3>Volleyball Captain</h3>
-        <p>Leading the team has taught me quick decision-making and motivation strategies.</p>
+        <p>His leadership of the team demonstrates his ability to motivate others and make quick decisions under pressure.</p>
       </div>
     </div>
   </div>
@@ -89,7 +164,14 @@
 
   <footer id="contact">
     <p>&copy; 2025 Vasudev Goud Bikki | Cybersecurity Professional</p>
-    <p>Contact: vasudev0951@gmail.com | Phone: +45 31527142 | LinkedIn: linkedin.com/in/vasudev-goud-bikki-146488227</p>
+    <p>Contact: vasudev0951@gmail.com | Phone: +45 31527142 | 
+      <a href="https://linkedin.com/in/vasudev-goud-bikki-146488227" target="_blank" style="color: white; text-decoration: none;">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a> | 
+      <a href="https://github.com/VasudevGoud" target="_blank" style="color: white; text-decoration: none;">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </p>
   </footer>
 
   <script>
