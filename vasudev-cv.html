@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary: #2563eb;
@@ -92,13 +93,13 @@
     }
     
     .skill {
-    background-color: var(--light);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: var(--text-gray); /* Changed from --heading-dark to --text-gray */
-    border: 1px solid #e5e7eb; /* Added subtle border for better definition */
-  }
+      background-color: var(--light);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      border: 1px solid #e5e7eb;
+    }
     
     ul {
       padding-left: 1.2rem;
@@ -107,6 +108,24 @@
     li {
       margin-bottom: 0.5rem;
       color: var(--text-gray);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    
+    .social-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary-dark);
     }
     
     @media print {
@@ -139,13 +158,29 @@
     <h1>Vasudev Goud Bikki</h1>
     <p>Student Assistant | Master's Student in Computer Science & Engineering - Cybersecurity</p>
     <p>Kagsá Kollegiet 153, st.1. 2860 Søborg | +45 31527142 | vasudev0951@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/vasudev-goud-bikki-146488227</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/vasudev-goud-bikki-146488227" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/VasudevGoud" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Profile</h2>
+    <p> Motivated and detail-oriented Master’s student specializing in Cybersecurity at the Technical University of Denmark (DTU), with hands-on experience in penetration testing, application security, and vulnerability assessment. Passionate about strengthening system resilience through practical, research-based solutions. Currently seeking an internship, student assistant role, or Master's thesis project to apply technical skills and contribute to real-world cybersecurity challenges.</p>
   </div>
 
   <div class="section">
     <h2>About</h2>
-    <p>I am a Master's student in Computer Science and Engineering at the Technical University of Denmark, specializing in Cybersecurity. My expertise includes cyber risk management, security automation, and vulnerability assessment. I have hands-on experience with ethical hacking, incident response, and security frameworks such as NIST and ISO27001. Through my coursework and projects, I have developed strong analytical and problem-solving skills, particularly in network security, penetration testing, and compliance standards. I am eager to apply my knowledge to cybersecurity operations and risk mitigation in a professional environment.</p>
-  </div>
+    <p>I am passionate about penetration testing and application security. I have reverse-engineered Android apps to uncover critical vulnerabilities and possess a strong understanding of OWASP Top 10 risks, such as SQL Injection, Cross-Site Scripting (XSS), and Insecure Data Storage.</p>
+
+    <p>Through academic projects and practical exercises, I have conducted vulnerability assessments, developed security scripts in Python, and applied the Cyber Kill Chain model to simulate real-world attack scenarios. I am highly motivated to contribute my skills and project experience toward strengthening cybersecurity operations, enhancing system resilience, and mitigating risks in professional environments.</p>
+      
+     <p>My areas of expertise include cyber risk management, security automation, vulnerability assessment, and penetration testing. I have hands-on experience in reverse engineering Android applications, ethical hacking, incident response, and implementing security frameworks such as NIST and ISO 27001.</p>
+    </div>
 
   <div class="section">
     <h2>Education</h2>
@@ -156,9 +191,17 @@
       </div>
       <p>MSc in Computer Science and Engineering - Cybersecurity Specialization</p>
     </div>
+
+    <div class="item">
+      <div class="item-header">
+        <h3>Gurunanak Institutions of Technical Campus</h3>
+        <span class="date">2019 – 2023</span>
+      </div>
+      <p>Bachelors in Electronics and Communication Engineering </p>
+    </div>
   </div>
 
-  <div class="section">
+  <div class="section">  
     <h2>Courses</h2>
     <div class="courses-list">
         <div class="course">
@@ -205,10 +248,10 @@
 </div>
 
   <div class="section">
-    <h2>Projects</h2>
+    <h2>Hands-on Experience</h2>
     <div class="item">
-      <h3>Reverse Engineering</h3>
-      <p>I’ve reverse-engineered Android apps to uncover vulnerabilities like insecure data storage and exposed APIs, providing actionable fixes. Additionally, I conducted OWASP Top 10 assessments—identifying risks like SQLi and XSS—and implemented mitigations such as input validation and secure authentication.      </p>
+      <h3>App Reverse Engineering</h3>
+      <p>I've reverse-engineered Android apps to uncover vulnerabilities like insecure data storage and exposed APIs, providing actionable fixes. Additionally, I conducted OWASP Top 10 assessments—identifying risks like SQLi and XSS—and implemented mitigations such as input validation and secure authentication.</p>
     </div>
     <div class="item">
       <h3>Cyber Ship Security Report</h3>
@@ -306,9 +349,6 @@
         <span class="skill">Strong Communication</span>
       </div>
     </div>
-  </div>
-
-
   </div>
 </body>
 </html>
