@@ -233,10 +233,8 @@ body {
   margin-bottom: 0.8rem;
   display: block;
   text-shadow:
-    0 0 6px #00ff88,
-    0 0 18px #00ff88,
-    0 0 40px rgba(0,255,136,0.85),
-    0 0 80px rgba(0,255,136,0.4);
+    0 0 8px rgba(0,255,136,0.5),
+    0 0 20px rgba(0,255,136,0.25);
 }
 
 .hero-name {
