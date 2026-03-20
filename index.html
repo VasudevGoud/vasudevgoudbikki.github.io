@@ -3,247 +3,811 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vasudev Goud Bikki | Cybersecurity Portfolio</title>
+  <title>Vasudev Goud Bikki | Cybersecurity</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    .container {
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: flex-start;
-      gap: 40px;
-    }
-    
-    .profile-pic {
-      width: 300px;
-      height: 350px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .intro {
-      flex: 1;
-    }
-    
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      
-      .profile-pic {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-      }
-    }
-
-    .social-links {
-      margin-top: 20px;
-    }
-    
-    .social-links a {
-      margin-right: 15px;
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .social-links a:hover {
-      color: #0077b5; /* LinkedIn blue */
-    }
-    
-    .social-links a.github:hover {
-      color: #6e5494; /* GitHub purple */
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Vasudev Goud Bikki</h1>
-    <p>Cybersecurity Enthusiast | Penetration Tester | DTU Master's Student</p>
-  </header>
 
-  <div class="container">
-    <img src="001.jpg" alt="Vasudev Goud Bikki" class="profile-pic" />
-    <div class="intro">
-      <h2>About</h2>
-      <p>
-        Vasudev Goud Bikki is a cybersecurity specialist currently pursuing his Master's degree at DTU. He embodies a rare combination of technical brilliance and physical discipline - by day he's analyzing security frameworks and writing Python scripts, by night he's pushing his limits in the gym and boxing ring.
-      </p>
-      <p>
-        Vasudev's multifaceted personality shines through his diverse interests:
-        <ul class="hobbies-list">
-          <li>🏋️‍♂️ A certified fitness enthusiast with a passion for weight training</li>
-          <li>🥊 An accomplished boxer who approaches cybersecurity with a fighter's discipline</li>
-          <li>💃 A creative choreographer who brings rhythm to his technical work</li>
-          <li>🏐 A natural leader as demonstrated by his volleyball team captaincy</li>
-        </ul>
-      </p>
-      <p>
-        His unique perspective comes from seeing cybersecurity through the lens of his varied experiences. The strategic thinking from boxing, the teamwork from sports, and the creativity from dance all inform his approach to security challenges. Vasudev believes true cybersecurity expertise requires more than just technical skills - it demands the same dedication, adaptability, and resilience he's developed through his physical pursuits.
-      </p>
-      
-      
+  <!-- Scroll progress bar -->
+  <div id="scroll-bar"></div>
+
+  <!-- Animated gradient background -->
+  <div class="animated-bg" aria-hidden="true"></div>
+
+  <!-- Mouse glow cursor -->
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">VGB<span class="accent">.</span></div>
+    <div class="nav-links" id="nav-links">
+      <a href="#hero"       class="nav-link">Home</a>
+      <a href="#about"      class="nav-link">About</a>
+      <a href="#education"  class="nav-link">Education</a>
+      <a href="#projects"   class="nav-link">Projects</a>
+      <a href="#skills"     class="nav-link">Skills</a>
+      <a href="#activities" class="nav-link">Activities</a>
+      <a href="#contact"    class="nav-link">Contact</a>
+      <a href="vasudev-cv.html" class="nav-link nav-cta" target="_blank">View CV</a>
     </div>
-  </div>
-
-  <nav>
-    <a href="vasudev-cv.html" target="_blank">CV</a>
-    <a href="#contact">Contact</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- Rest of your HTML remains the same -->
-  <button type="button" class="collapsible">Show Extracurricular Activities</button>
-  <div class="content" id="extracurricular">
-    <div class="content-inner">
-      <div class="activity-item">
-        <h3>Gym & Boxing <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i></a></h3>
-        <p>Fitness is his passion - from heavy lifting to boxing training. Check out his Instagram for workout updates!</p>
-        
-        <div class="media-grid">
-          <!-- Gym Photos with thumbnails -->
-          <div class="media-thumbnail" onclick="openMediaModal('images/gym1.jpg', 'image')">
-            <img src="images/gym1-thumb.jpg" alt="Weight training session">
-          </div>
-          <div class="media-thumbnail" onclick="openMediaModal('images/gym2.jpg', 'image')">
-            <img src="images/gym2-thumb.jpg" alt="Boxing gloves">
-          </div>
-          <div class="media-thumbnail" onclick="openMediaModal('images/gym3.jpg', 'image')">
-            <img src="images/gym3-thumb.jpg" alt="Gym progress">
-          </div>
-          
-          
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+
+    <!-- Matrix rain canvas — hero layer -->
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+    <!-- Decorative hex grid -->
+    <div class="hex-grid" aria-hidden="true">
+      <div class="hex"></div><div class="hex"></div><div class="hex"></div>
+      <div class="hex"></div><div class="hex"></div><div class="hex"></div>
+      <div class="hex"></div><div class="hex"></div><div class="hex"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Vasudev Goud<br><span class="gradient-text">Bikki</span></h1>
+        <div class="hero-role">
+          <span class="role-prefix">// </span>
+          <span id="typed-text" class="typed-text"></span><span class="cursor-blink">|</span>
         </div>
+        <p class="hero-bio">Application security enginner and a pasionate penetration tester with strong knowldge and experience in the cybersecurity.</p>
+        <div class="hero-cta">
+          <a href="vasudev-cv.html" class="btn btn-primary" target="_blank">
+            <i class="fas fa-file-alt"></i> View CV
+          </a>
+          <a href="#projects" class="btn btn-outline">
+            <i class="fas fa-terminal"></i> My Work
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://linkedin.com/in/vasudev-goud-bikki-146488227" target="_blank" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/VasudevGoud" target="_blank" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://gitlab.com/vasudev0951" target="_blank" class="social-icon" title="GitLab">
+            <i class="fab fa-gitlab"></i>
+          </a>
+          <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="social-icon" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
       </div>
-      
-      <div class="activity-item">
-        <h3>Dance Choreography <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i></a></h3>
-        <p>Choreographing dance routines combines his creativity with teamwork. Here are some highlights:</p>
-        <div class="media-grid">
-          <div class="media-thumbnail" onclick="openMediaModal('videos/dance1.mp4', 'video')">
-            <img src="images/dance-thumbnail1.jpg" alt="Dance performance thumbnail">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
+
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <div class="image-glow"></div>
+          <img src="001.jpg" alt="Vasudev Goud Bikki" class="profile-pic" />
+          <div class="image-ring ring-1"></div>
+          <div class="image-ring ring-2"></div>
+        </div>
+
+        <!-- Terminal decoration -->
+        <div class="terminal-widget">
+          <div class="terminal-bar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">vasudev@dtu:~$</span>
           </div>
-          <div class="media-thumbnail" onclick="openMediaModal('videos/dance2.mp4', 'video')">
-            <img src="images/dance-thumbnail2.jpg" alt="Dance rehearsal thumbnail">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">$</span> nmap -sV target.host</p>
+            <p class="t-output">PORT   STATE  SERVICE</p>
+            <p class="t-output">22/tcp open   ssh</p>
+            <p class="t-output">80/tcp open   http</p>
+            <p><span class="t-prompt">$</span> python3 exploit.py<span class="t-blink">_</span></p>
           </div>
         </div>
-      </div>
-      
-      <div class="activity-item">
-        <h3>Volleyball Captain</h3>
-        <p>His leadership of the team demonstrates his ability to motivate others and make quick decisions under pressure.</p>
       </div>
     </div>
-  </div>
 
-  <!-- Media Modal -->
-  <div id="mediaModal" class="modal">
-    <span class="close" onclick="closeMediaModal()">&times;</span>
-    <div class="modal-content">
-      <div id="mediaContainer"></div>
-      <a id="instaLink" href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="insta-modal-link">
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">// my story</span>
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            My journey into cybersecurity began with a simple question: <span class="highlight-text">how do systems fail when viewed from an attacker's perspective?</span> That curiosity led me from India to Denmark to pursue a Master's degree in Cybersecurity at the Technical University of Denmark. Since then, I have focused on developing an adversarial mindset — not only understanding how systems are built, but how they can be broken, manipulated, and exploited under real-world conditions.
+          </p>
+          <p>
+            At DTU, I don't just study attacks — I simulate them. I've reverse-engineered Android applications to expose top OWASP vulnerabilities. I've built Python security tools from scratch, run full kill-chain penetration tests with <span class="highlight-text">Metasploit, Nmap, JADX, APKTool, FRIDA, ADB and Burp Suite</span>, and conducted cybersecurity risk assessments on critical infrastructure.
+          </p>
+          <p>
+            My Master's thesis at <span class="highlight-text">Philips Medisize</span> pushed this further. I developed <span class="highlight-text">HAVA</span> — the Health Apps Vulnerability Assessor — a Python-based automated tool for assessing security requirements in mHealth applications against regulatory standards (FDA, EU MDR, HIPAA, GDPR). I integrated HAVA directly into the GitHub CI/CD pipeline, embedding continuous security assessment into the development lifecycle. The thesis was graded <span class="highlight-text">12 out of 12</span> — the highest mark possible.
+          </p>
+          <p>
+            I operate on one conviction: <span class="highlight-text">you cannot defend what you don't fully understand</span>. Outside the terminal, I'm a boxer, a dance choreographer, and a volleyball captain. The discipline, pattern recognition, and team coordination those demand? They show up in every security engagement I run.
+          </p>
+          <div class="about-tags">
+            <span class="tag"><i class="fas fa-bug"></i> OWASP MASVS / MASTG</span>
+            <span class="tag"><i class="fas fa-shield-alt"></i> AppSec Engineer</span>
+            <span class="tag"><i class="fas fa-graduation-cap"></i> DTU MSc</span>
+            <span class="tag"><i class="fas fa-code"></i> Python</span>
+            <span class="tag"><i class="fas fa-hospital"></i> Healthcare Security</span>
+            <span class="tag"><i class="fas fa-trophy"></i> Thesis 12/12</span>
+            <span class="tag"><i class="fas fa-dumbbell"></i> Boxer</span>
+            <span class="tag"><i class="fas fa-users"></i> Team Captain</span>
+          </div>
+        </div>
+
+        <!-- Stats column -->
+        <div class="about-right reveal">
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-university"></i></div>
+              <div class="stat-label">University</div>
+              <div class="stat-value">DTU</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="stat-label">Specialization</div>
+              <div class="stat-value">Cybersecurity</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-fist-raised"></i></div>
+              <div class="stat-label">Sport</div>
+              <div class="stat-value">Boxing</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-star"></i></div>
+              <div class="stat-label">Thesis Grade</div>
+              <div class="stat-value">12 / 12</div>
+            </div>
+          </div>
+
+          <!-- Decorative code block -->
+          <div class="code-decoration">
+            <div class="code-header">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="code-file">vasudev.py</span>
+            </div>
+            <pre class="code-body"><span class="c-kw">class</span> <span class="c-class">Vasudev</span>:
+  role    = <span class="c-str">"AppSec Engineer @ Philips Medisize"</span>
+  uni     = <span class="c-str">"DTU, Denmark"</span>
+  thesis  = <span class="c-str">"HAVA — grade: 12/12"</span>
+  tools   = [
+    <span class="c-str">"Burp Suite"</span>, <span class="c-str">"Frida"</span>,
+    <span class="c-str">"JADX"</span>, <span class="c-str">"Nmap"</span>,
+    <span class="c-str">"Metasploit"</span>,
+  ]
+  mindset = <span class="c-str">"Think like attacker,</span>
+<span class="c-str">            defend like engineer"</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated counter strip -->
+      <div class="counter-strip reveal">
+        <div class="counter-item">
+          <span class="counter-num" data-target="12">0</span><span class="counter-suffix">/12</span>
+          <span class="counter-label">Thesis Grade</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num" data-target="5">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Security Projects</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num" data-target="10">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Tools &amp; Frameworks</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num" data-target="1">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Years in AppSec</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section section-dark" id="education">
+
+    <!-- Hacker mask — decorative -->
+    <div class="mask-wrapper" aria-hidden="true">
+      <svg class="hacker-mask-svg" viewBox="0 0 280 360" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#00ff88" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Outer face shape -->
+        <ellipse cx="140" cy="168" rx="115" ry="148" stroke-width="1.5" opacity="0.7"/>
+
+        <!-- Forehead decorative line -->
+        <line x1="110" y1="35" x2="170" y2="35" stroke-width="1" opacity="0.5"/>
+        <line x1="140" y1="20" x2="140" y2="35" stroke-width="1" opacity="0.5"/>
+        <circle cx="140" cy="20" r="3.5" fill="#00ff88" stroke="none" opacity="0.6"/>
+        <circle cx="110" cy="35" r="2" fill="#00ff88" stroke="none" opacity="0.4"/>
+        <circle cx="170" cy="35" r="2" fill="#00ff88" stroke="none" opacity="0.4"/>
+
+        <!-- LEFT eyebrow — deeply arched -->
+        <path d="M32 115 C50 78, 90 68, 108 96" stroke-width="2.5" opacity="0.9"/>
+
+        <!-- RIGHT eyebrow -->
+        <path d="M172 96 C190 68, 230 78, 248 115" stroke-width="2.5" opacity="0.9"/>
+
+        <!-- LEFT eye — almond -->
+        <path d="M40 132 Q76 112, 112 132 Q76 152, 40 132 Z" stroke-width="1.8" opacity="0.85"/>
+        <circle cx="76" cy="132" r="11" stroke-width="1.2" opacity="0.6"/>
+        <circle cx="76" cy="132" r="5" fill="#00ff88" stroke="none" opacity="0.55"/>
+
+        <!-- RIGHT eye -->
+        <path d="M168 132 Q204 112, 240 132 Q204 152, 168 132 Z" stroke-width="1.8" opacity="0.85"/>
+        <circle cx="204" cy="132" r="11" stroke-width="1.2" opacity="0.6"/>
+        <circle cx="204" cy="132" r="5" fill="#00ff88" stroke="none" opacity="0.55"/>
+
+        <!-- Nose bridge -->
+        <path d="M140 158 L126 192 Q140 200, 154 192 Z" stroke-width="1.5" opacity="0.6"/>
+
+        <!-- Cheek blush ovals -->
+        <ellipse cx="56" cy="196" rx="32" ry="22" stroke-width="1" stroke-dasharray="5 4" opacity="0.35"/>
+        <ellipse cx="224" cy="196" rx="32" ry="22" stroke-width="1" stroke-dasharray="5 4" opacity="0.35"/>
+
+        <!-- Pencil moustache -->
+        <path d="M96 212 C114 200, 130 206, 140 206 C150 206, 166 200, 184 212" stroke-width="2.8" opacity="0.9"/>
+        <!-- Curl ends -->
+        <path d="M96 212 C86 212, 82 222, 88 228" stroke-width="1.8" opacity="0.7"/>
+        <path d="M184 212 C194 212, 198 222, 192 228" stroke-width="1.8" opacity="0.7"/>
+
+        <!-- Broad smile -->
+        <path d="M68 228 C96 260, 184 260, 212 228" stroke-width="2.8" opacity="0.9"/>
+        <!-- Smile upturn corners -->
+        <path d="M68 228 C58 220, 54 232, 62 242" stroke-width="2" opacity="0.7"/>
+        <path d="M212 228 C222 220, 226 232, 218 242" stroke-width="2" opacity="0.7"/>
+
+        <!-- Van Dyke pointed goatee -->
+        <path d="M112 264 C118 284, 130 308, 140 318 C150 308, 162 284, 168 264" stroke-width="2.2" opacity="0.8"/>
+
+        <!-- Side circuit lines LEFT -->
+        <line x1="25" y1="168" x2="6" y2="168" stroke-width="1" opacity="0.4"/>
+        <line x1="6" y1="168" x2="6" y2="142" stroke-width="1" opacity="0.4"/>
+        <line x1="6" y1="142" x2="18" y2="142" stroke-width="1" opacity="0.4"/>
+        <circle cx="18" cy="142" r="3" fill="#00ff88" stroke="none" opacity="0.45"/>
+
+        <!-- Side circuit lines RIGHT -->
+        <line x1="255" y1="168" x2="274" y2="168" stroke-width="1" opacity="0.4"/>
+        <line x1="274" y1="168" x2="274" y2="142" stroke-width="1" opacity="0.4"/>
+        <line x1="274" y1="142" x2="262" y2="142" stroke-width="1" opacity="0.4"/>
+        <circle cx="262" cy="142" r="3" fill="#00ff88" stroke="none" opacity="0.45"/>
+
+        <!-- Scan line (animated via CSS) -->
+        <line class="edu-scan" x1="25" y1="60" x2="255" y2="60" stroke-width="1.2" stroke="#00ff88" opacity="0.55"/>
+      </svg>
+    </div>
+
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">// academic path</span>
+        <h2>Education</h2>
+      </div>
+
+      <div class="timeline">
+        <!-- DTU -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-date"><i class="fas fa-calendar"></i> 2024 – Present</span>
+              <span class="timeline-badge active-badge">Active</span>
+            </div>
+            <h3>Technical University of Denmark (DTU)</h3>
+            <p class="timeline-sub">MSc — Computer Science &amp; Engineering, Cybersecurity Specialization</p>
+            <p class="timeline-desc">Studying advanced topics including ethical hacking, network security, data security, incident response, AI, and research in blockchain cyber-physical systems. Working on real-world penetration testing projects and security simulations.</p>
+            <div class="timeline-tags">
+              <span>Ethical Hacking</span>
+              <span>Network Security</span>
+              <span>SIEM / IDS</span>
+              <span>Blockchain Security</span>
+              <span>AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gurunanak -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-date"><i class="fas fa-calendar"></i> 2019 – 2023</span>
+            </div>
+            <h3>Gurunanak Institutions of Technical Campus</h3>
+            <p class="timeline-sub">BE — Electronics &amp; Communication Engineering</p>
+            <p class="timeline-desc">Built a strong foundation in electronics, circuit design, signal processing, and communication systems. Developed early interest in how hardware and software systems interact — the foundation of systems security thinking.</p>
+            <div class="timeline-tags">
+              <span>Electronics</span>
+              <span>Communication Systems</span>
+              <span>Signal Processing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Philips Medisize -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot dot-cert"></div>
+          <div class="timeline-card cert-card">
+            <div class="cert-inner">
+              <div class="cert-icon"><i class="fas fa-hospital-alt"></i></div>
+              <div>
+                <div class="timeline-meta">
+                  <span class="timeline-date"><i class="fas fa-calendar"></i> Jan 2025 – Present</span>
+                  <span class="timeline-badge cert-badge">Industry</span>
+                </div>
+                <h3>Philips Medisize — Application Security Engineer</h3>
+                <p class="timeline-sub">Student Assistant &amp; Master's Thesis · Copenhagen, Denmark</p>
+                <p class="timeline-desc">Conducting SAST, DAST, and runtime security testing of Android mHealth apps aligned with OWASP MASVS/MASTG. Developed HAVA — an automated Python tool for assessing regulatory security requirements (FDA, EU MDR, HIPAA, GDPR), integrated into CI/CD pipelines. Thesis graded <strong style="color:var(--accent)">12/12</strong>.</p>
+                <div class="timeline-tags">
+                  <span>SAST / DAST</span>
+                  <span>OWASP MASVS</span>
+                  <span>FDA / EU MDR</span>
+                  <span>Android Security</span>
+                  <span>CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">// hands-on experience</span>
+        <h2>Work &amp; Projects</h2>
+      </div>
+
+      <!-- ── WORK EXPERIENCE ── -->
+      <div class="subsection-label reveal">
+        <span class="subsection-line"></span>
+        <span class="subsection-title"><i class="fas fa-briefcase"></i> Work Experience</span>
+        <span class="subsection-line"></span>
+      </div>
+
+      <div class="work-stack">
+
+        <!-- Student Assistant — AppSec Engineer (FEATURED) -->
+        <div class="work-card work-card-featured reveal">
+          <div class="work-card-glow"></div>
+          <div class="work-card-left">
+            <div class="work-company-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="work-timeline-line"></div>
+          </div>
+          <div class="work-card-right">
+            <div class="work-header">
+              <div>
+                <h3 class="work-title">Student Assistant — Application Security Engineer
+                  <span class="work-status-dot"></span>
+                </h3>
+                <p class="work-company"><i class="fas fa-building"></i> Philips Medisize &nbsp;·&nbsp; Copenhagen, Denmark</p>
+              </div>
+              <span class="work-date-badge">Jan 2025 – Present</span>
+            </div>
+            <ul class="work-bullets">
+              <li><i class="fas fa-chevron-right"></i> Conducted application security design reviews and code-level vulnerability analysis in close collaboration with development teams.</li>
+              <li><i class="fas fa-chevron-right"></i> Performed SAST, DAST, and runtime security testing of Android applications aligned with OWASP MASVS and MASTG.</li>
+              <li><i class="fas fa-chevron-right"></i> Identified and mitigated risks in authentication flows, secrets handling, cryptography, secure storage, IPC, and API communication.</li>
+              <li><i class="fas fa-chevron-right"></i> Performed penetration testing of a cloud-hosted firmware signing portal — focusing on IAM, API security, access control, session management, and secrets handling.</li>
+              <li><i class="fas fa-chevron-right"></i> Supported incident analysis, log review, and runtime monitoring to investigate abnormal application behavior.</li>
+              <li><i class="fas fa-chevron-right"></i> Mapped security findings to FDA and EU MDR controls, strengthening audit readiness and compliance documentation.</li>
+            </ul>
+            <div class="work-tags">
+              <span>SAST / DAST</span><span>OWASP MASVS / MASTG</span><span>Android Security</span><span>Penetration Testing</span><span>IAM</span><span>FDA / EU MDR</span><span>Burp Suite</span><span>Frida / JADX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master's Thesis — HAVA -->
+        <div class="work-card work-card-thesis reveal">
+          <div class="work-card-left">
+            <div class="work-company-icon icon-cyan-bg">
+              <i class="fas fa-shield-virus"></i>
+            </div>
+            <div class="work-timeline-line"></div>
+          </div>
+          <div class="work-card-right">
+            <div class="work-header">
+              <div>
+                <h3 class="work-title">
+                  Master's Thesis — HAVA: Health Apps Vulnerability Assessor
+                  <span class="grade-badge">12 / 12</span>
+                </h3>
+                <p class="work-company"><i class="fas fa-building"></i> Philips Medisize &nbsp;·&nbsp; Copenhagen, Denmark</p>
+              </div>
+              <span class="work-date-badge">Sep 2025 – Present</span>
+            </div>
+            <ul class="work-bullets">
+              <li><i class="fas fa-chevron-right"></i> Developed a Python-based automated mobile security analysis tool to detect vulnerabilities in mHealth applications.</li>
+              <li><i class="fas fa-chevron-right"></i> Integrated automated security checks into GitHub CI/CD pipelines, enabling continuous and scalable security assessments.</li>
+              <li><i class="fas fa-chevron-right"></i> Performed reverse engineering using JADX and Frida to analyze runtime behavior and security controls of healthcare apps.</li>
+              <li><i class="fas fa-chevron-right"></i> Delivered clear technical reports supporting regulatory compliance: FDA, EU MDR, HIPAA, GDPR, ISO 27001.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Python</span><span>JADX / Frida</span><span>OWASP MASVS</span><span>FDA / EU MDR</span><span>HIPAA / GDPR</span><span>GitHub CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching Assistant -->
+        <div class="work-card reveal">
+          <div class="work-card-left">
+            <div class="work-company-icon icon-purple-bg">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="work-timeline-line"></div>
+          </div>
+          <div class="work-card-right">
+            <div class="work-header">
+              <div>
+                <h3 class="work-title">Teaching Assistant — Master's Courses</h3>
+                <p class="work-company"><i class="fas fa-university"></i> Technical University of Denmark (DTU)</p>
+              </div>
+              <span class="work-date-badge">Sep – Dec 2025</span>
+            </div>
+            <ul class="work-bullets">
+              <li><i class="fas fa-chevron-right"></i> <strong>Fundamentals of Cybersecurity:</strong> Assisted Master's students with core concepts, CTF exercises, and assignment evaluation.</li>
+              <li><i class="fas fa-chevron-right"></i> <strong>Logical Theories for Uncertainty &amp; Learning:</strong> Supported Master's in AI students on First-Order Logic and Game Theory; evaluated assignments.</li>
+            </ul>
+            <div class="work-tags">
+              <span>CTF</span><span>Cybersecurity</span><span>Game Theory</span><span>Teaching</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evening Shift Leader -->
+        <div class="work-card reveal">
+          <div class="work-card-left">
+            <div class="work-company-icon icon-orange-bg">
+              <i class="fas fa-store"></i>
+            </div>
+          </div>
+          <div class="work-card-right">
+            <div class="work-header">
+              <div>
+                <h3 class="work-title">Evening Shift Leader</h3>
+                <p class="work-company"><i class="fas fa-map-marker-alt"></i> Retail · Denmark</p>
+              </div>
+              <span class="work-date-badge">Jul 2024 – Feb 2025</span>
+            </div>
+            <ul class="work-bullets">
+              <li><i class="fas fa-chevron-right"></i> Managed evening operations, assigned tasks, and handled customer escalations under pressure.</li>
+              <li><i class="fas fa-chevron-right"></i> Responsible for store closing and physical security protocols.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Leadership</span><span>Operations</span><span>Physical Security</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /work-stack -->
+
+      <!-- ── ACADEMIC PROJECTS ── -->
+      <div class="subsection-label reveal" style="margin-top:3.5rem;">
+        <span class="subsection-line"></span>
+        <span class="subsection-title"><i class="fas fa-flask"></i> Academic Projects</span>
+        <span class="subsection-line"></span>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="project-content">
+            <h3>Android App Reverse Engineering</h3>
+            <p>Reverse-engineered Android applications to expose top OWASP vulnerabilities — broken authentication, insecure storage, insufficient cryptography, and improper platform usage. Delivered actionable mitigation reports covering input validation and secure authentication.</p>
+            <div class="project-tags">
+              <span>Reverse Engineering</span><span>OWASP MASVS</span><span>Android</span><span>JADX / Apktool</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-ship"></i></div>
+          <div class="project-content">
+            <h3>Cyber Ship Security Assessment</h3>
+            <p>Conducted an ISO 27001-based cybersecurity risk assessment for maritime systems using the NIST framework. Evaluated threats and vulnerabilities in critical shipping infrastructure and developed structured mitigation strategies.</p>
+            <div class="project-tags">
+              <span>ISO 27001</span><span>NIST</span><span>Risk Assessment</span><span>Critical Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-terminal"></i></div>
+          <div class="project-content">
+            <h3>Python Security Toolkit</h3>
+            <p>Built a suite of security scripts from scratch: password strength analyzer, DNS record explorer, network port scanner, firewall configurator (iptables), and default-credential tester — each tested in live environments.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Port Scanning</span><span>DNS Recon</span><span>iptables</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-crosshairs"></i></div>
+          <div class="project-content">
+            <h3>Full Kill-Chain Penetration Tests</h3>
+            <p>Simulated end-to-end cyberattacks using the Cyber Kill Chain framework with Metasploit, Nmap, and Burp Suite — across recon, exploitation, and post-exploitation phases.</p>
+            <div class="project-tags">
+              <span>Metasploit</span><span>Nmap</span><span>Burp Suite</span><span>Cyber Kill Chain</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon"><i class="fas fa-link"></i></div>
+          <div class="project-content">
+            <h3>Blockchain Security Research</h3>
+            <p>Systematic literature review on blockchain applications in cyber-physical systems. Analyzed how distributed ledger technology enhances security, integrity, and transparency where digital and physical components intersect.</p>
+            <div class="project-tags">
+              <span>Blockchain</span><span>Cyber-Physical Systems</span><span>Research</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-dark" id="skills">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">// arsenal</span>
+        <h2>Skills &amp; Tools</h2>
+      </div>
+
+      <div class="skills-full-grid">
+
+        <!-- Skill bars -->
+        <div class="skills-bars-section">
+          <div class="skill-category reveal">
+            <h3><i class="fas fa-shield-alt"></i> Application Security</h3>
+            <div class="skill-list">
+              <div class="skill-item"><span>Penetration Testing (SAST / DAST)</span><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+              <div class="skill-item"><span>Android Security (MASVS / MASTG)</span><div class="skill-bar"><div class="skill-fill" data-width="87"></div></div></div>
+              <div class="skill-item"><span>OWASP Top 10 / Vulnerability Assessment</span><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+              <div class="skill-item"><span>Reverse Engineering (JADX / Frida)</span><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+              <div class="skill-item"><span>Incident Response (SIEM / IDS)</span><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+            </div>
+          </div>
+
+          <div class="skill-category reveal">
+            <h3><i class="fas fa-code"></i> Programming</h3>
+            <div class="skill-list">
+              <div class="skill-item"><span>Python</span><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+              <div class="skill-item"><span>SQL</span><div class="skill-bar"><div class="skill-fill" data-width="72"></div></div></div>
+              <div class="skill-item"><span>HTML / CSS</span><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+              <div class="skill-item"><span>Java (Basics)</span><div class="skill-bar"><div class="skill-fill" data-width="55"></div></div></div>
+              <div class="skill-item"><span>Bash / Linux</span><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool badges -->
+        <div class="skills-badges-section reveal">
+          <div class="badge-group">
+            <h4><i class="fas fa-tools"></i> Security Tools</h4>
+            <div class="badge-cloud">
+              <span class="skill-badge"><i class="fas fa-bug"></i> Burp Suite</span>
+              <span class="skill-badge"><i class="fas fa-microscope"></i> Frida</span>
+              <span class="skill-badge"><i class="fas fa-file-code"></i> JADX</span>
+              <span class="skill-badge"><i class="fas fa-box-open"></i> Apktool</span>
+              <span class="skill-badge"><i class="fas fa-crosshairs"></i> Metasploit</span>
+              <span class="skill-badge"><i class="fas fa-network-wired"></i> Nmap</span>
+              <span class="skill-badge"><i class="fas fa-eye"></i> Wireshark</span>
+              <span class="skill-badge"><i class="fas fa-fire"></i> iptables</span>
+              <span class="skill-badge"><i class="fab fa-github"></i> GitHub Actions</span>
+            </div>
+          </div>
+          <div class="badge-group">
+            <h4><i class="fas fa-sitemap"></i> Standards &amp; Frameworks</h4>
+            <div class="badge-cloud">
+              <span class="skill-badge accent-badge">OWASP MASVS / MASTG</span>
+              <span class="skill-badge accent-badge">NIST SP 800-30</span>
+              <span class="skill-badge accent-badge">ISO 27001</span>
+              <span class="skill-badge accent-badge">FDA</span>
+              <span class="skill-badge accent-badge">EU MDR</span>
+              <span class="skill-badge accent-badge">HIPAA / GDPR</span>
+              <span class="skill-badge accent-badge">Cyber Kill Chain</span>
+              <span class="skill-badge accent-badge">CORAS</span>
+            </div>
+          </div>
+          <div class="badge-group">
+            <h4><i class="fas fa-language"></i> Languages</h4>
+            <div class="badge-cloud">
+              <span class="skill-badge purple-badge">English — Fluent</span>
+              <span class="skill-badge purple-badge">Danish — Beginner</span>
+              <span class="skill-badge purple-badge">Telugu — Native</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== ACTIVITIES ===== -->
+  <section class="section" id="activities">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">// beyond the screen</span>
+        <h2>Extracurricular</h2>
+      </div>
+
+      <!-- TSAD — full-width featured -->
+      <div class="act-featured reveal">
+        <div class="act-featured-glow"></div>
+        <div class="act-featured-left">
+          <div class="act-feat-icon"><i class="fas fa-landmark"></i></div>
+          <div class="act-feat-flag">🇮🇳 🇩🇰</div>
+          <a href="https://tsad.dk" target="_blank" class="act-feat-link">
+            <i class="fas fa-external-link-alt"></i> tsad.dk
+          </a>
+        </div>
+        <div class="act-featured-right">
+          <div class="act-feat-badge">Board Member</div>
+          <h3 class="act-feat-title">Telangana Association of Denmark</h3>
+          <p class="act-feat-desc">Representing and uniting the Telangana community across Scandinavia — organizing cultural events, supporting incoming Indian students, and fostering connections between professionals and scholars in Denmark.</p>
+          <div class="act-feat-pills">
+            <span class="act-pill"><i class="fas fa-users"></i> Community Leadership</span>
+            <span class="act-pill"><i class="fas fa-calendar-star"></i> Cultural Events</span>
+            <span class="act-pill"><i class="fas fa-hands-helping"></i> Student Support</span>
+            <span class="act-pill"><i class="fas fa-globe"></i> Cross-Cultural Bridge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-column cards -->
+      <div class="act-grid">
+
+        <!-- Boxing -->
+        <div class="act-card act-card-green reveal">
+          <div class="act-card-accent"></div>
+          <div class="act-card-top">
+            <div class="act-card-icon"><i class="fas fa-fist-raised"></i></div>
+            <div>
+              <h4>Gym &amp; Boxing</h4>
+              <span class="act-card-sub">Discipline · Focus · Resilience</span>
+            </div>
+          </div>
+          <p>Boxing demands pattern recognition, composure under pressure, and rapid counter-decisions — the same traits that make an elite penetration tester.</p>
+          <div class="act-meters">
+            <div class="act-meter-row">
+              <span>Dedication</span>
+              <div class="act-meter-bar"><div class="act-meter-fill" data-w="95" style="--clr: #00ff88"></div></div>
+              <span class="act-meter-val">95%</span>
+            </div>
+            <div class="act-meter-row">
+              <span>Consistency</span>
+              <div class="act-meter-bar"><div class="act-meter-fill" data-w="90" style="--clr: #00ff88"></div></div>
+              <span class="act-meter-val">90%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dance -->
+        <div class="act-card act-card-cyan reveal">
+          <div class="act-card-accent"></div>
+          <div class="act-card-top">
+            <div class="act-card-icon"><i class="fas fa-music"></i></div>
+            <div>
+              <h4>Dance Choreography</h4>
+              <span class="act-card-sub">Creativity · Coordination · Flow</span>
+            </div>
+          </div>
+          <p>Choreographing is systems design — coordinating multiple agents toward a timed, unified output. That orchestration mindset maps directly to security incident coordination.</p>
+          <div class="act-meters">
+            <div class="act-meter-row">
+              <span>Creativity</span>
+              <div class="act-meter-bar"><div class="act-meter-fill" data-w="88" style="--clr: #00d4ff"></div></div>
+              <span class="act-meter-val">88%</span>
+            </div>
+            <div class="act-meter-row">
+              <span>Performance</span>
+              <div class="act-meter-bar"><div class="act-meter-fill" data-w="82" style="--clr: #00d4ff"></div></div>
+              <span class="act-meter-val">82%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volleyball -->
+        <div class="act-card act-card-orange reveal">
+          <div class="act-card-accent"></div>
+          <div class="act-card-top">
+            <div class="act-card-icon"><i class="fas fa-volleyball-ball"></i></div>
+            <div>
+              <h4>Volleyball Captain</h4>
+              <span class="act-card-sub">Leadership · Strategy · Teamwork</span>
+            </div>
+          </div>
+          <p>Captaining means reading the game in real-time, rotating resources, and making split-second calls — not unlike red team coordination during a live engagement.</p>
+          <div class="act-meters">
+            <div class="act-meter-row">
+              <span>Leadership</span>
+              <div class="act-meter-bar"><div class="act-meter-fill" data-w="92" style="--clr: #f97316"></div></div>
+              <span class="act-meter-val">92%</span>
+            </div>
+            <div class="act-meter-row">
+              <span>Strategy</span>
+              <div class="act-meter-bar"><div class="act-meter-fill" data-w="85" style="--clr: #f97316"></div></div>
+              <span class="act-meter-val">85%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER / CONTACT ===== -->
+  <footer class="footer" id="contact">
+    <!-- Decorative scan line -->
+    <div class="footer-scan"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">VGB<span class="accent">.</span></div>
+      <p class="footer-tagline">Securing the digital world, one vulnerability at a time.</p>
+
+      <div class="footer-links">
+        <a href="mailto:vasudev0951@gmail.com" class="footer-link">
+          <i class="fas fa-envelope"></i> vasudev0951@gmail.com
+        </a>
+        <a href="tel:+4531527142" class="footer-link">
+          <i class="fas fa-phone"></i> +45 31527142
+        </a>
+        <a href="https://linkedin.com/in/vasudev-goud-bikki-146488227" target="_blank" class="footer-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/VasudevGoud" target="_blank" class="footer-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://gitlab.com/vasudev0951" target="_blank" class="footer-link">
+          <i class="fab fa-gitlab"></i> GitLab
+        </a>
+        <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="footer-link">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </div>
+
+      <p class="footer-copy">&copy; 2025 Vasudev Goud Bikki &nbsp;|&nbsp; Kagsá Kollegiet 153, 2860 Søborg, Denmark</p>
+    </div>
+  </footer>
+
+  <!-- ===== MEDIA MODAL ===== -->
+  <div id="media-modal" class="modal-overlay" onclick="handleOverlayClick(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      <div id="modal-media"></div>
+      <a href="https://www.instagram.com/vasu_dev__18/" target="_blank" class="modal-insta">
         <i class="fab fa-instagram"></i> See more on Instagram
       </a>
     </div>
   </div>
 
-  <footer id="contact">
-    <p>&copy; 2025 Vasudev Goud Bikki | Cybersecurity Professional</p>
-    <p>Contact: vasudev0951@gmail.com | Phone: +45 31527142 | 
-      <a href="https://linkedin.com/in/vasudev-goud-bikki-146488227" target="_blank" style="color: white; text-decoration: none;">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a> | 
-      <a href="https://github.com/VasudevGoud" target="_blank" style="color: white; text-decoration: none;">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-    </p>
-  </footer>
-
-  <script>
-    // Collapsible section script
-    document.addEventListener('DOMContentLoaded', function() {
-      const coll = document.querySelector('.collapsible');
-      coll.addEventListener('click', function() {
-        this.classList.toggle('active');
-        const content = document.querySelector('.content');
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-          this.textContent = 'Show Extracurricular Activities';
-        } else {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          this.textContent = 'Hide Extracurricular Activities';
-        }
-      });
-    });
-    
-    // Media Modal functionality
-    function openMediaModal(src, type) {
-      const modal = document.getElementById('mediaModal');
-      const container = document.getElementById('mediaContainer');
-      
-      // Clear previous content
-      container.innerHTML = '';
-      
-      if (type === 'video') {
-        const video = document.createElement('video');
-        video.controls = true;
-        video.autoplay = true;
-        video.style.width = '100%';
-        video.style.maxHeight = '70vh';
-        
-        const source = document.createElement('source');
-        source.src = src;
-        source.type = 'video/mp4';
-        
-        video.appendChild(source);
-        container.appendChild(video);
-        
-        // Error handling
-        video.onerror = function() {
-          container.innerHTML = `
-            <div class="error-message">
-              <p>Could not load the video. Please try again later.</p>
-              <p>Make sure:</p>
-              <ul>
-                <li>The video file exists at: ${src}</li>
-                <li>The file is in MP4 format</li>
-                <li>The file permissions are correct</li>
-              </ul>
-            </div>
-          `;
-        };
-      } else {
-        // For images
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Activity photo';
-        img.style.maxWidth = '100%';
-        img.style.maxHeight = '70vh';
-        container.appendChild(img);
-      }
-      
-      modal.style.display = "block";
-    }
-
-    function closeMediaModal() {
-      document.getElementById('mediaModal').style.display = "none";
-      document.getElementById('mediaContainer').innerHTML = '';
-    }
-
-    // Close when clicking outside modal content
-    window.onclick = function(event) {
-      const modal = document.getElementById('mediaModal');
-      if (event.target == modal) {
-        closeMediaModal();
-      }
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
-
+</html>
