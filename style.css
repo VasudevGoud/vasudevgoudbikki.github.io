@@ -704,6 +704,29 @@ body {
   color: var(--accent);
 }
 
+.project-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a78bfa;
+  text-decoration: none;
+  border: 1px solid rgba(124,58,237,0.35);
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(124,58,237,0.1);
+  transition: all 0.25s;
+}
+
+.project-live-link:hover {
+  background: rgba(124,58,237,0.22);
+  border-color: rgba(124,58,237,0.6);
+  color: #c4b5fd;
+  transform: translateX(3px);
+}
+
 /* ===== SKILLS ===== */
 .skills-full-grid {
   display: grid;
