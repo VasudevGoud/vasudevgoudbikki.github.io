@@ -519,6 +519,61 @@ body {
 
 .about-right { display: flex; flex-direction: column; gap: 1.5rem; }
 
+/* Experience snapshot */
+.about-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.about-exp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.25s;
+}
+
+.about-exp-item:last-child { border-bottom: none; }
+.about-exp-item:hover { background: rgba(255,255,255,0.03); }
+
+.about-exp-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.about-exp-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.about-exp-role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.about-exp-where {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+}
+
+.about-exp-date {
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+}
+
 .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
 .stat-card {
